@@ -16,7 +16,7 @@ struct ContentView: View {
         VStack {
             
             if let location = locationManager.location {
-                // TODO: Add APi integration
+                // Fetch Weather from API
                 if let weather = weather {
                     Text("Weather Data Fetched!")
                 } else {
