@@ -17,7 +17,18 @@ struct ContentView: View {
             
             if let location = locationManager.location {
                 // TODO: Add APi integration
-                Text("Location: \(location.longitude), \(location.latitude)")
+                if let weather = weather {
+                    Text("Weather Data Fetched!")
+                } else {
+                    LoadingView()
+                        .task {
+                            do {
+                                weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
+                            } catch {
+                                print("Error Getting Weather: \(error)")
+                            }
+                        }
+                }
             } else {
                 if locationManager.isLoading {
                     LoadingView()
