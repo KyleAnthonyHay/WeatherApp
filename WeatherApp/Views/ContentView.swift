@@ -18,7 +18,7 @@ struct ContentView: View {
             if let location = locationManager.location {
                 // Fetch Weather from API
                 if let weather = weather {
-                    Text("Weather Data Fetched!")
+                    WeatherView(weather: weather)
                 } else {
                     LoadingView()
                         .task {
