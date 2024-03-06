@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var locationManager = LocationManager()
+    var weatherManager = WeatherManager()
+    @State var weather: ResponseBody?
     
     var body: some View {
         VStack {
             
             if let location = locationManager.location {
-                Text("Your Coordinates are: \(location.longitude),\(location.latitude) ")
+                // TODO: Add APi integration
+                Text("Location: \(location.longitude), \(location.latitude)")
             } else {
                 if locationManager.isLoading {
                     LoadingView()
