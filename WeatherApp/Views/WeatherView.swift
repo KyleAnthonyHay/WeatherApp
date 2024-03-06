@@ -14,17 +14,44 @@ struct WeatherView: View {
             VStack{
                 VStack(alignment: .leading, spacing: 5){
                     Text(weather.name)
-                        .bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold().font(.title)
                     Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
                         .fontWeight(.light)
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
                 
+                VStack {
+                    HStack {
+                        VStack(spacing: 20) {
+                            Image(systemName: "cloud.rain")
+                                .font(.system(size: 40))
+                            
+                            Text(weather.weather[0].main)
+                            
+                        }
+                        .frame(width: 150, alignment: .leading)
+                        
+                        Spacer()
+                        
+                        Text(weather.main.feels_like.roundDouble() + "°")
+                            .font(.system(size: 100)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).padding()
+                    }
+                    Spacer()
+                        .frame(height: 80)
+                    
+                    AsyncImage(url: URL(string: "https://santorinidave.com/wp-content/uploads/2023/10/nyc-best-place-to-stay-luxury-hotel.jpeg")) {image in
+                        image.image?.resizable().aspectRatio(contentMode: .fit).frame(width: 350)
+                    } //insert progressview here
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                
             }
             .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
             
         }
         .edgesIgnoringSafeArea(.bottom)

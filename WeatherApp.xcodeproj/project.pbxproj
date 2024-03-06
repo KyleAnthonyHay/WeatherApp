@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				85B4AB8B2B98E82F00137E50 /* WeatherAppApp.swift */,
+				85B4ABA92B991F6B00137E50 /* Extentions.swift */,
 				85B4AB9C2B98EE6900137E50 /* Views */,
 				85B4AB992B98E9D600137E50 /* Managers */,
 				85B4AB8F2B98E83100137E50 /* Assets.xcassets */,
 				85B4AB912B98E83100137E50 /* Preview Content */,
-				85B4ABA92B991F6B00137E50 /* Extentions.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
