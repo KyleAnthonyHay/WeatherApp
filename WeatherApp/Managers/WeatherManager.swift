@@ -70,7 +70,7 @@ struct Main: Decodable {
     let temp_min: Double
     let temp_max: Double
     let pressure: Int
-    let humidity: Int
+    let humidity: Double
     let sea_level: Int?
     let grnd_level: Int?
 }
