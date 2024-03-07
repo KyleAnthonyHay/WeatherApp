@@ -44,8 +44,6 @@ struct WeatherView: View {
                     AsyncImage(url: URL(string: "https://santorinidave.com/wp-content/uploads/2023/10/nyc-best-place-to-stay-luxury-hotel.jpeg")) {image in
                         image.image?.resizable().aspectRatio(contentMode: .fit).frame(width: 350)
                     } //insert progressview here
-                    
-                    
                     Spacer()
                     
                     
