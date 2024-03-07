@@ -45,6 +45,7 @@ struct WeatherView: View {
                         image.image?.resizable().aspectRatio(contentMode: .fit).frame(width: 350)
                     } //insert progressview here
                     
+                    
                     Spacer()
                     
                     
